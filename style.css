@@ -34,14 +34,14 @@ h1{
 
 .form {
         
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
         
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        border: 1px solid #34495E;
-        border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: 1px solid transparent;
+    border-radius: .5rem;
 }
 
 
@@ -93,11 +93,6 @@ h1{
     
 }
 
-.message-submit.active {
-
-    opacity: 0.5;
-
-}
 
 /*----------------------------------------------------------------*/
 
@@ -180,12 +175,6 @@ main {
     
 }
 
-#messages .message .action .delete.active {
-
-    opacity: 0.5;
-
-}
-
 
 #toast-container {
     position: fixed;
@@ -193,11 +182,11 @@ main {
     right: 0;
     left: 0;
     margin: 1rem auto;
-    height: 100px;
-    width: 50%;
-    color: white;
+    height: 20%;
+    width: 30%;
+    color: #F7F9F9; 
     padding: 20px;
-    font-size: 24px;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,15 +196,25 @@ main {
     -webkit-backdrop-filter: blur(6.4px);
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border: 1px solid #34495E;
-    border-radius: 1rem;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+    display: none;
   }
   
-  .toast {
+.toast {
 
     text-align: center;
     font-size: 2.5rem;
 
-  }
+}
 
+#toast-container span {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    font-size: 2rem;
+
+}
 

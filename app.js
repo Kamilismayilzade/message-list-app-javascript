@@ -16,9 +16,9 @@ window.addEventListener('load', function() {
         if (messageInput.value === '') return;
 
         messages.push(messageInput.value);
+        messageInput.value = '';
 
         const message = messages[messages.length - 1];
-        messageInput.value = '';
 
         const newMessage = document.createElement('div');
         newMessage.classList.add('message');
@@ -26,6 +26,7 @@ window.addEventListener('load', function() {
           <div class="content">
             <input type="text" class="text" value="${message}" readonly > 
           </div>
+
           <div class="action">
             <button class="delete"> <i class="fa-solid fa-xmark"></i> </button>
           </div>
@@ -36,7 +37,8 @@ window.addEventListener('load', function() {
 
         const deleteBtn = newMessage.querySelector('.delete');
         deleteBtn.addEventListener('click', function() {
-          newMessage.remove();
+            newMessage.remove();
+            removeToast();
         });
     })
 
@@ -46,13 +48,17 @@ window.addEventListener('load', function() {
       
         const toast = document.createElement('div');
         toast.classList.add('toast');
-        toast.innerHTML = message;
+        toast.innerHTML = `<span><i class="fa-sharp fa-solid fa-circle-info"></i></span> ${message}`;
         toastContainer.style.display = 'block';
         toastContainer.appendChild(toast);
       
         setTimeout(() => {
-          toastContainer.style.display = 'none';
+            removeToast();
         }, 5000);
-      }
+    }
 
+    function removeToast() {
+        toastContainer.style.display = 'none';
+        toastContainer.innerHTML = '';
+    }
 });
