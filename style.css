@@ -3,10 +3,109 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #014872, #D7EDE1);
+    color: #F7F9F9;
+    display: flex;
+    flex-direction: column;
 }
+
+header {
+
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+h1{
+
+   text-align: center;
+   margin: 1rem;
+   font-size: 2.2rem;
+
+}
+
+.form {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        border: 1px solid #34495E;
+        border-radius: .5rem;
+}
+
+
+.message-input {
+
+    width: 70%;
+    margin-right: 2rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    border-radius: .5rem;
+    color: #F7F9F9;
+    font-size: 1.3rem;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4.7px);
+    -webkit-backdrop-filter: blur(4.7px);
+}
+
+.message-input::placeholder {
+    color: #F7F9F9;
+}
+
+.message-submit {
+
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    gap: 2rem; 
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  
+    border-left: .1rem ridge;
+    border-top: .1rem ridge;
+    border-bottom: none;
+    border-right: none;
+    border-radius: .5rem;
+    
+    background: transparent;
+    font-family: 'Indie Flower';
+    color: #F7F9F9;
+
+}
+
+.message-submit:hover {
+    transition: .1s ease-in-out; 
+    border: .1rem ridge;
+    transform: scale(1.01);
+    
+}
+
+.message-submit.active {
+
+    opacity: 0.5;
+
+}
+
+
+
+
+
+
+
+
+
+
 
