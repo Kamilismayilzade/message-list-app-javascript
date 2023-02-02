@@ -99,13 +99,91 @@ h1{
 
 }
 
+/*----------------------------------------------------------------*/
 
 
+main {
+
+    flex: 1 1 0%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2rem;
+    
+}
 
 
+.message-list {
 
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: 1px solid #34495E;
+    border-radius: .5rem;
 
+}
 
+.message-list h2 {
 
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 1rem;
 
+}
 
+#messages .message {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4.7px);
+    -webkit-backdrop-filter: blur(4.7px);
+    margin-bottom: 1rem;
+}
+
+#messages .message .content .text {
+
+    display: block;
+    font-size: 1.2rem;
+    width: 100%;
+    color: #F7F9F9;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#messages .message .action .delete {
+
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    gap: 2rem; 
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  
+    border-left: .1rem ridge;
+    border-top: .1rem ridge;
+    border-bottom: none;
+    border-right: none;
+    border-radius: .5rem;
+    
+    background: transparent;
+    font-family: 'Indie Flower';
+    color: #641E16;
+
+}
+
+#messages .message .action .delete:hover {
+    transition: .1s ease-in-out; 
+    border: .1rem ridge;
+    transform: scale(1.01);
+    
+}
+
+#messages .message .action .delete.active {
+
+    opacity: 0.5;
+
+}
