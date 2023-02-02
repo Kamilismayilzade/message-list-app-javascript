@@ -185,3 +185,37 @@ main {
     opacity: 0.5;
 
 }
+
+
+#toast-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 1rem auto;
+    height: 100px;
+    width: 50%;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: 1px solid #34495E;
+    border-radius: 1rem;
+  }
+  
+  .toast {
+
+    text-align: center;
+    font-size: 2.5rem;
+
+  }
+
+
