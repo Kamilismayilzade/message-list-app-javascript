@@ -7,7 +7,22 @@ window.addEventListener('load', function() {
     const addMessageBtn = document.querySelector('.message-submit');
     const toastContainer = document.getElementById("toast-container");
 
+    // Get messages from local storage or set an empty array
+    // let messages = localStorage.getItem("messages") ? JSON.parse(localStorage.getItem("messages")) : [];
+
     let messages = [];
+
+    const storedMessages = localStorage.getItem("messages");
+
+    if (storedMessages) {
+        try {
+            messages = JSON.parse(storedMessages);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+
     
     form.addEventListener('submit', function(e) {
 
@@ -18,10 +33,13 @@ window.addEventListener('load', function() {
         messages.push(messageInput.value);
         messageInput.value = '';
 
+        localStorage.setItem("messages", JSON.stringify(messages));
+
         const message = messages[messages.length - 1];
 
         const newMessage = document.createElement('div');
         newMessage.classList.add('message');
+
         newMessage.innerHTML = `
           <div class="content">
             <input type="text" class="text" value="${message}" readonly > 
@@ -36,13 +54,17 @@ window.addEventListener('load', function() {
         showToast(message);
 
         const deleteBtn = newMessage.querySelector('.delete');
+
         deleteBtn.addEventListener('click', function() {
+
             newMessage.remove();
             removeToast();
+
         });
     })
 
     function showToast(message) {
+
         // remove existing toast element
         toastContainer.innerHTML = '';
       
@@ -55,10 +77,13 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             removeToast();
         }, 5000);
+
     }
 
     function removeToast() {
+
         toastContainer.style.display = 'none';
         toastContainer.innerHTML = '';
+        
     }
 });
